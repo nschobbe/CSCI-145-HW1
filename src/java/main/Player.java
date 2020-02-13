@@ -6,7 +6,7 @@ public class Player {
     private String playerClass;
     private double lootModifier;
 
-    public Player(String playerClass, double lootModifier) {
+    public Player(String playerClass, double lootModifier) throws InvalidPlayerTypeException {
         if (playerClass.equals("Warrior")) {
             this.playerClass = "Warrior";
             this.gold = 0;
@@ -22,12 +22,12 @@ public class Player {
             this.lootModifier = 1.2;
         }
         else {
-            System.out.println("Please enter a valid starting class.");
-            System.out.println("Either \"Warrior\" or \"Thief\" is considered valid input");
+            throw new InvalidPlayerTypeException("Please enter a valid Player type");
         }
     }
     public void attack(Monster target) {
-        
+        target.onHit(this.damage);
+        System.out.println("Player hits " + target.getMonsterType() + " for " + damage + " damage");
     }
 
     public void onHit(int damage) {
