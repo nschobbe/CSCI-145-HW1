@@ -1,3 +1,6 @@
+package src.java.main;
+
+import src.java.main.Exceptions.InvalidPlayerTypeException;
 
 public class Player {
     private int health;

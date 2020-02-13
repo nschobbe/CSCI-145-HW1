@@ -1,3 +1,4 @@
+package src.java.main;
 
 public class DungeonMap {
     private Room[][] rooms;

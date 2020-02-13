@@ -1,3 +1,6 @@
+package src.java.main;
+
+import src.java.main.Exceptions.InvalidMonsterTypeException;
 
 public class Monster {
     private int health;
