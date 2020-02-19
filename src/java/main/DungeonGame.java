@@ -11,14 +11,31 @@ public class DungeonGame {
     private static String Left = "A";
     private static String Right = "D";
     private static String Quit = "Q";
+    private static String Run = "Z";
+    private static String Attack = "X";
 
+    private double x = 10;
+    private double y = 10;
+
+    public void changeX(double xV){
+        double x = xV;
+    }
+    public void changeY(double yV){
+        double y = yV;
+    }
+    public double getX(){
+        return x;
+    }
+    public double getY(){
+        return y;
+    }
 
     public DungeonGames() {
         scanner = new Scanner(System.in);
         System.out.println("Enter your class, Warrior or Thief: ");
         String pClass = scanner.nextLine();
         player = new Player(pClass);
-        map = new DungeonMap(10,10);
+        map = new DungeonMap(x,y);
     }
     public void play() {
         System.out.println("Welcome to our Dungeon!");
@@ -43,6 +60,7 @@ public class DungeonGame {
     }
     private void printPlayerStats() {
         System.out.println("Health: " + player.getHealth());
+        System.out.println("Gold: " + player.getGold());
     }
     private void promtUser() {
         System.out.println("Choose one of the following: ");
@@ -65,6 +83,12 @@ public class DungeonGame {
         }
         else if (userChoice.equalsIgnoreCase(Right)) {
             currentPlayerRoom = moveRight();
+        }
+        else if(userChoice.equalsIgnoreCase(Run)) {
+            System.out.println("Run")
+        }
+        else if(userChoice.equalsIgnoreCase(Attack)) {
+            System.out.println("Attack")
         }
         else {
             System.out.println("Unknown user input");
