@@ -44,10 +44,10 @@ public class Room {
                 if (rando.nextInt(4) == 0) {
                     Monster gobby = new Monster("Goblin");
                     while (gobby.getHealth() > 0) {
-                        System.out.println("A Goblin appears!!")
+                        System.out.println("A Goblin appears!!");
                         gobby.attack(player);
                         System.out.println("The Goblin hits you");
-                        System.out.println("Do you want to run or fight? (type \"z\" to run or \"x\" to attack");
+                        System.out.println("Do you want to run or fight? (type \"x\" to attack, or WASD to flee)");
                         if (scanny.next().equals("z")) {
                             System.out.println("You run away!");
                         }
@@ -61,10 +61,10 @@ public class Room {
                 if (rando.nextInt(4) == 1) {
                     Monster zobby = new Monster("Zombie");
                     while (zobby.getHealth() > 0) {
-                        System.out.println("A Zombie appears!!")
+                        System.out.println("A Zombie appears!!");
                         zobby.attack(player);
                         System.out.println("The Zombie hits you");
-                        System.out.println("Do you want to run or fight? (type \"z\" to run or \"x\" to attack");
+                        System.out.println("Do you want to run or fight? (type \"x\" to attack, or WASD to flee)");
                         if (scanny.next().equals("z")) {
                             System.out.println("You run away!");
                         }
@@ -78,10 +78,10 @@ public class Room {
                 if (rando.nextInt(4) == 2) {
                     Monster occy = new Monster("Orc");
                     while (occy.getHealth() > 0) {
-                        System.out.println("A Orc appears!!")
+                        System.out.println("A Orc appears!!");
                         occy.attack(player);
                         System.out.println("The Orc hits you");
-                        System.out.println("Do you want to run or fight? (type \"z\" to run or \"x\" to attack");
+                        System.out.println("Do you want to run or fight? (type \"x\" to attack, or WASD to flee)");
                         if (scanny.next().equals("z")) {
                             System.out.println("You run away!");
                         }
@@ -95,10 +95,10 @@ public class Room {
                 if (rando.nextInt(4) == 3) {
                     Monster deneky = new Monster("Deneke");
                     while (deneky.getHealth() > 0) {
-                        System.out.println("A Deneke appears!!")
+                        System.out.println("A Deneke appears!!");
                         deneky.attack(player);
                         System.out.println("The Deneke hits you");
-                        System.out.println("Do you want to run or fight? (type \"z\" to run or \"x\" to attack");
+                        System.out.println("Do you want to run or fight? (type \"x\" to attack, or WASD to flee");
                         if (scanny.next().equals("z")) {
                             System.out.println("You run away!");
                         }

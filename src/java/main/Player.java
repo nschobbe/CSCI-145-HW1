@@ -8,8 +8,12 @@ public class Player {
     private int damage;
     private String playerClass;
     private double lootModifier;
+    private Point2d position;
 
     public Player(String playerClass) throws InvalidPlayerTypeException {
+        this.position.setX(0);
+        this.position.setY(0);
+
         if (playerClass.equals("Warrior")) {
             this.playerClass = "Warrior";
             this.gold = 0;
@@ -54,5 +58,13 @@ public class Player {
     }
     public String getPlayerClass() {
         return this.playerClass;
+    }
+
+    public Point2d getPosition() {
+        return this.position;
+    }
+    
+    public void setPosition(Point2d position) {
+        this.position = position;
     }
 }

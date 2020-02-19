@@ -13,7 +13,7 @@ public class Point2d {
         return x;
     }
 
-    public void setX(int xV) {
+    public void setX(int x) {
         this.x = x;
     }
 

@@ -1,6 +1,8 @@
 package src.java.main;
 import java.util.Scanner;
 
+import src.java.main.Exceptions.InvalidPlayerTypeException;
+
 public class DungeonGame {
     private DungeonMap map;
     private Player player;
@@ -14,28 +16,31 @@ public class DungeonGame {
     private static String Run = "Z";
     private static String Attack = "X";
 
-    private double x = 10;
-    private double y = 10;
+    private int x = 10;
+    private int y = 10;
 
-    public void changeX(double xV){
+    public void changeX(double xV) {
         double x = xV;
     }
-    public void changeY(double yV){
+
+    public void changeY(double yV) {
         double y = yV;
     }
-    public double getX(){
+
+    public int getX() {
         return x;
     }
-    public double getY(){
+
+    public int getY() {
         return y;
     }
 
-    public DungeonGame() {
+    public DungeonGame() throws InvalidPlayerTypeException {
         scanner = new Scanner(System.in);
         System.out.println("Enter your class, Warrior or Thief: ");
         String pClass = scanner.nextLine();
         player = new Player(pClass);
-        map = new DungeonMap(x,y);
+        map = new DungeonMap(x, y, this.player);
     }
     public void play() {
         System.out.println("Welcome to our Dungeon!");
@@ -46,14 +51,14 @@ public class DungeonGame {
             promtUser();
             String userChoice = scanner.next();
 
-            if (userChoice.equalsIgnoreCare(Quit)) {
+            if (userChoice.equalsIgnoreCase(Quit)) {
                 System.out.println("You've Quit.");
                 break;
             }
 
             handleUserChoice(userChoice);
 
-            if(!player.isAlive()) {
+            if(!(player.getHealth() > 0)) {
                 break;
             }
         }
@@ -88,7 +93,7 @@ public class DungeonGame {
             System.out.println("Run")
         }
         else if(userChoice.equalsIgnoreCase(Attack)) {
-            System.out.println("Attack")
+            System.out.println("Attack");
         }
         else {
             System.out.println("Unknown user input");
