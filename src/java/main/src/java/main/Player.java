@@ -10,6 +10,7 @@ public class Player {
     private Point2d position;
 
     public Player(String playerClass) {
+        this.position = new Point2d(0, 0);
         this.position.setX(0);
         this.position.setY(0);
 

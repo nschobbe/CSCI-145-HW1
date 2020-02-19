@@ -47,7 +47,6 @@ public class DungeonGame {
             printPlayerStats();
             promtUser();
             String userChoice = scanner.next();
-
             if (userChoice.equalsIgnoreCase(Quit)) {
                 System.out.println("You've Quit.");
                 break;
@@ -56,6 +55,10 @@ public class DungeonGame {
             handleUserChoice(userChoice);
 
             if(!(player.getHealth() > 0)) {
+                break;
+            }
+            if(!(player.getGold() < 100)) {
+                System.out.println("You've won!");
                 break;
             }
         }
