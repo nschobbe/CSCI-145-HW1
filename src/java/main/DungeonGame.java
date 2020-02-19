@@ -43,7 +43,7 @@ public class DungeonGame {
         map = new DungeonMap(x, y, this.player);
     }
 
-    public void play() {
+    public void play() throws InvalidMonsterTypeException {
         System.out.println("Welcome to our Dungeon!");
 
         while (true) {
