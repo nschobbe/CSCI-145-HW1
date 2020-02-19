@@ -19,12 +19,12 @@ public class DungeonGame {
     private int x = 10;
     private int y = 10;
 
-    public void changeX(double xV) {
-        double x = xV;
+    public void changeX(int xV) {
+        this.x = xV;
     }
 
-    public void changeY(double yV) {
-        double y = yV;
+    public void changeY(int yV) {
+        this.y = yV;
     }
 
     public int getX() {
