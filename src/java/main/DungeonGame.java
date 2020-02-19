@@ -19,11 +19,11 @@ public class DungeonGame {
     private int x = 10;
     private int y = 10;
 
-    public void changeX(int xV) {
+    public void setX(int xV) {
         this.x = xV;
     }
 
-    public void changeY(int yV) {
+    public void setY(int yV) {
         this.y = yV;
     }
 
