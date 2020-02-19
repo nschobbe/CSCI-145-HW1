@@ -13,18 +13,17 @@ public class DungeonGame {
     private static String Left = "A";
     private static String Right = "D";
     private static String Quit = "Q";
-    private static String Run = "Z";
     private static String Attack = "X";
 
     private int x = 10;
     private int y = 10;
 
-    public void changeX(int xV) {
-        this.x = xV;
+    public void changeX(int x) {
+        this.x = x;
     }
 
-    public void changeY(int yV) {
-        this.y = yV;
+    public void changeY(int y) {
+        this.y = y;
     }
 
     public int getX() {
@@ -88,9 +87,6 @@ public class DungeonGame {
         }
         else if (userChoice.equalsIgnoreCase(Right)) {
             currentPlayerRoom = moveRight();
-        }
-        else if(userChoice.equalsIgnoreCase(Run)) {
-            System.out.println("Run")
         }
         else if(userChoice.equalsIgnoreCase(Attack)) {
             System.out.println("Attack");
