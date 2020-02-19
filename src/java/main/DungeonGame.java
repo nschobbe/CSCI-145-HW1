@@ -1,6 +1,7 @@
 package src.java.main;
 import java.util.Scanner;
 
+import src.java.main.Exceptions.InvalidMonsterTypeException;
 import src.java.main.Exceptions.InvalidPlayerTypeException;
 
 public class DungeonGame {
@@ -13,7 +14,6 @@ public class DungeonGame {
     private static String Left = "A";
     private static String Right = "D";
     private static String Quit = "Q";
-    private static String Run = "Z";
     private static String Attack = "X";
 
     private int x = 10;
@@ -42,10 +42,11 @@ public class DungeonGame {
         player = new Player(pClass);
         map = new DungeonMap(x, y, this.player);
     }
+
     public void play() {
         System.out.println("Welcome to our Dungeon!");
 
-        while(true) {
+        while (true) {
             map.print();
             printPlayerStats();
             promtUser();
@@ -58,15 +59,17 @@ public class DungeonGame {
 
             handleUserChoice(userChoice);
 
-            if(!(player.getHealth() > 0)) {
+            if (!(player.getHealth() > 0)) {
                 break;
             }
         }
     }
+
     private void printPlayerStats() {
         System.out.println("Health: " + player.getHealth());
         System.out.println("Gold: " + player.getGold());
     }
+
     private void promtUser() {
         System.out.println("Choose one of the following: ");
         System.out.print(Up + " = up ");
@@ -75,7 +78,8 @@ public class DungeonGame {
         System.out.print(Right + " = right ");
         System.out.println(Quit + " = Quit ");
     }
-    private void handleUserChoice(String userChoice) {
+
+    private void handleUserChoice(String userChoice) throws InvalidMonsterTypeException {
         Room currentPlayerRoom = null;
         if (userChoice.equalsIgnoreCase(Up)) {
             currentPlayerRoom = moveUp();
@@ -88,9 +92,6 @@ public class DungeonGame {
         }
         else if (userChoice.equalsIgnoreCase(Right)) {
             currentPlayerRoom = moveRight();
-        }
-        else if(userChoice.equalsIgnoreCase(Run)) {
-            System.out.println("Run")
         }
         else if(userChoice.equalsIgnoreCase(Attack)) {
             System.out.println("Attack");
