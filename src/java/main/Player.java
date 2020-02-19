@@ -9,7 +9,7 @@ public class Player {
     private String playerClass;
     private double lootModifier;
 
-    public Player(String playerClass, double lootModifier) throws InvalidPlayerTypeException {
+    public Player(String playerClass) throws InvalidPlayerTypeException {
         if (playerClass.equals("Warrior")) {
             this.playerClass = "Warrior";
             this.gold = 0;
@@ -43,5 +43,16 @@ public class Player {
 
     public void onLoot(int gold) {
         this.gold += gold * this.lootModifier;
+    }
+
+    public int getGold() {
+        return this.gold;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+    public String getPlayerClass() {
+        return this.playerClass;
     }
 }

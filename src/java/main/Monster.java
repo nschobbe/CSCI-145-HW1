@@ -1,5 +1,6 @@
 package src.java.main;
 
+import java.util.Random;
 import src.java.main.Exceptions.InvalidMonsterTypeException;
 
 public class Monster {
@@ -23,12 +24,18 @@ public class Monster {
             this.health = 18;
             this.damage = 20;
         }
+        if (monsterType.equals("Deneke")) {
+            this.monsterType = "Deneke";
+            this.health = 55;
+            this.damage = 5;
+        }
         else {
             throw new InvalidMonsterTypeException("Please enter a valid monster type");
         }
     }
     public void attack(Player target) {
-        target.onHit(damage);
+        Random rando = new Random();
+        target.onHit(rando.nextInt(damage));
         System.out.println(this.monsterType + " hits Player for " + this.damage + " damage");
     }
 
@@ -38,5 +45,9 @@ public class Monster {
     
     public String getMonsterType() {
         return this.monsterType;
+    }
+    
+    public int getHealth() {
+        return this.health;
     }
 }
