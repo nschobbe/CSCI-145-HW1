@@ -2,6 +2,7 @@ package src.java.main;
 
 public class DungeonMap {
     private Room[][] map;
+    private String[][] printedMap;
     private int playerXPosition;
     private int playerYPosition;
     private final String WALL_MAP_POSITION = "*";
@@ -10,7 +11,7 @@ public class DungeonMap {
 
     public DungeonMap(int rows, int columns) {
         map = new Room[rows][columns];
-        initMap();
+        initiateMap();
     }
     private void initiateMap(){
         for(int i = 0; i < map.length; i++){
@@ -18,7 +19,7 @@ public class DungeonMap {
                 map[i][j] = new Room();
             }
         }
-        map[playerYPosition][playerXPosition] = PLAYER_MAP_POSITION;
+        printedMap[playerYPosition][playerXPosition] = PLAYER_MAP_POSITION;
     }
     public void print() {
         printFirstLastBorder();
@@ -30,19 +31,20 @@ public class DungeonMap {
                 }
                 else {
                     System.out.print(EMPTY_MAP_POSITION);
-            }
+                }
             System.out.println(WALL_MAP_POSITION);
+            }
+         printFirstLastBorder();
         }
-        printFirstLastBorder();
     }
-    private void printFirstLastBorder(){
+    public void printFirstLastBorder(){
         for(int i = 0; i <= map[0].length+1; i++) {
             System.out.print(WALL_MAP_POSITION);
         }
         System.out.println();
     }
 
-    public Room movePlayer(Point2d distance) {
+    public Room movePlayer(Point2d distance, Player player) {
         Point2d newPosition = player.getPosition().add(distance);
         Room currentPlayerRoom = null;
 

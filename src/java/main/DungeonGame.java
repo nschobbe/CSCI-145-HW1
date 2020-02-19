@@ -30,7 +30,7 @@ public class DungeonGame {
         return y;
     }
 
-    public DungeonGames() {
+    public DungeonGame() {
         scanner = new Scanner(System.in);
         System.out.println("Enter your class, Warrior or Thief: ");
         String pClass = scanner.nextLine();
