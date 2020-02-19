@@ -2,14 +2,10 @@ package src.java.main;
 import java.util.Random;
 import java.util.Scanner;
 
-import src.java.main.Exceptions.InvalidMonsterTypeException;
-
-import java.math.*;
-
 public class Room {
     private boolean visited;
 
-    public void enter(Player player) throws InvalidMonsterTypeException { // either nothing, monster, gold, pots
+    public void enter(Player player) { // either nothing, monster, gold, pots
         Random rando = new Random();
         Scanner scanny = new Scanner(System.in);
         if (!visited) {

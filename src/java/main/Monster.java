@@ -1,14 +1,13 @@
 package src.java.main;
 
 import java.util.Random;
-import src.java.main.Exceptions.InvalidMonsterTypeException;
 
 public class Monster {
     private int health;
     private int damage;
     private String monsterType;
 
-    public Monster(String monsterType) throws InvalidMonsterTypeException {
+    public Monster(String monsterType) {
         if (monsterType.equals("Goblin")) {
             this.monsterType = "Goblin";
             this.health = 6;
@@ -28,9 +27,6 @@ public class Monster {
             this.monsterType = "Deneke";
             this.health = 55;
             this.damage = 5;
-        }
-        else {
-            throw new InvalidMonsterTypeException("Please enter a valid monster type");
         }
     }
     public void attack(Player target) {

@@ -1,6 +1,5 @@
 package src.java.main;
 
-import src.java.main.Exceptions.InvalidPlayerTypeException;
 
 public class Player {
     private int health;
@@ -10,7 +9,7 @@ public class Player {
     private double lootModifier;
     private Point2d position;
 
-    public Player(String playerClass) throws InvalidPlayerTypeException {
+    public Player(String playerClass) {
         this.position.setX(0);
         this.position.setY(0);
 
@@ -27,9 +26,6 @@ public class Player {
             this.damage = 10;
             this.health = 70;
             this.lootModifier = 1.2;
-        }
-        else {
-            throw new InvalidPlayerTypeException("Please enter a valid Player type");
         }
     }
     public void attack(Monster target) {
